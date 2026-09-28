@@ -23,7 +23,7 @@ git clone https://github.com/mcatrisse/grafana-tutorials-environment
 
 cd grafana-tutorials-environment
 
-sudo docker compose up -d --force-recreate
+sudo docker compose up -d --force-recreate ${services}
 
 
 

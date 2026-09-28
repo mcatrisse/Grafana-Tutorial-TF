@@ -1,10 +1,12 @@
 resource "aws_instance" "grafana_stack" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type =  "t3.medium"
+  instance_type = var.instance_type
   vpc_security_group_ids      = [aws_security_group.grafana_stack_sg.id]
   associate_public_ip_address = true
   key_name = "vockey"
-  user_data = file("init_script.sh")
+  user_data = templatefile("init_script.sh", {
+    services = join(" ", var.service_selector)
+  })
   root_block_device {
     volume_size = 20
     volume_type = "gp3"
