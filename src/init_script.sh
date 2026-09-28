@@ -19,9 +19,9 @@ sudo apt-get -y install git docker-ce docker-ce-cli containerd.io docker-buildx-
 
 # Get repo
 
-git clone https://github.com/mcatrisse/tutorial-environment
+git clone https://github.com/mcatrisse/grafana-tutorials-environment
 
-cd tutorial-environment
+cd grafana-tutorials-environment
 
 sudo docker compose up -d --force-recreate
 
